@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Law's Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0048ff;
+      --gray-bg: #f6f8fa;
+      --card-radius: 15px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--gray-bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      width: 240px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      background-color: var(--primary);
+      padding: 20px 0;
+      z-index: 1050;
+    }
+
+    .sidebar .nav-link {
+      color: #cfd8ff;
+      padding: 12px 20px;
+      font-size: 15px;
+    }
+
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link.active {
+      background: white;
+      color: var(--primary);
+      border-radius: 8px;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 30px;
+    }
+
+    .navbar {
+      margin-left: 240px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 1rem 2rem;
+    }
+
+    .stat-card {
+      border-radius: var(--card-radius);
+      background-color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+
+    .stat-card h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .badge-pill {
+      border-radius: 20px;
+      padding: 0.35em 0.75em;
+      font-size: 0.75rem;
+    }
+
+    .user-info {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    .user-info img {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .user-info h6 {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .chart-card {
+      border-radius: var(--card-radius);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    input{
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      padding: 0.5rem 1rem;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar d-flex flex-column">
+  <h4 class="text-white text-center mb-4">Law' Dash</h4>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li><a href="#" class="nav-link active"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a></li>
+    <li><a href="#" class="nav-link"><i class="bi bi-file-earmark-text me-2"></i> Posts</a></li>
+    <li><a href="#" class="nav-link"><i class="bi bi-folder me-2"></i> Categories</a></li>
+    <li><a href="#" class="nav-link"><i class="bi bi-image me-2"></i> Media</a></li>
+    <li><a href="#" class="nav-link"><i class="bi bi-chat-left-dots me-2"></i> Comments</a></li>
+    <li><a href="#" class="nav-link"><i class="bi bi-gear me-2"></i> Settings</a></li>
+  </ul>
+  <div class="user-info">
+    <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/494481074_1405908770724078_7292178560519848109_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEwp8AhZ34M4y9uv6ZE02xEAFWSH8FN4IEAVZIfwU3ggYljTpl1JnyGpfw03DwhaI_OGPGXrsl7tsAgU0hImoP7&_nc_ohc=vLAPhVw4X0YQ7kNvwFT3T3c&_nc_oc=AdmH_tnL8ojq5LplsqSvC64jbhfDyst0QpX1Cc6o5xjnuNN7U3d805vft71s1HsAQ6s&_nc_zt=23&_nc_ht=scontent.fmnl9-3.fna&_nc_gid=DYpI1MKgx-UlME4jVq_XBQ&oh=00_AfKH1__e7MhD4SM9nWxkoO4lixknfIuIGtSd01Z-bEOiqg&oe=68221DCE" alt="User">
+    <h6>Lawrenz Jerico</h6>
+    <small>Support Manager</small>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <input type="text" placeholder="SEARCH" class="mb-0">
+    <div class="d-flex align-items-center gap-4">
+      <i class="bi bi-bell position-relative fs-5">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">29</span>
+      </i>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="bi bi-person-circle fs-5 me-1"></i> Lawrenz Jerico
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Profile</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-content">
+  <h5 class="mb-4">Dashboard</h5>
+  <div class="row g-4">
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Total Visits</h6>
+        <h4>4,292,200</h4>
+        <span class="text-success small">▲ 4.07% Last month</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Unique Visitors</h6>
+        <h4>292,621</h4>
+        <span class="text-warning small">▲ 0.24% Last month</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Average Visits Duration</h6>
+        <h4>2m 29s</h4>
+        <span class="text-danger small">▼ 1.64% Last month</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Bounce Rate</h6>
+        <h4>47.2%</h4>
+        <span class="text-muted small">Steady performance</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-8">
+      <div class="chart-card">
+        <h6 class="mb-3">Visitor Statistics (Nov - July)</h6>
+        <canvas id="visitorChart" height="100"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="chart-card text-center bg-primary text-white">
+        <h6>New Customers</h6>
+        <h2 class="my-2">+5,932</h2>
+        <canvas id="customerChart" height="80"></canvas>
+        <p class="mb-0">292 Daily Avg.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('visitorChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [
+        {
+          label: 'Last 6 months',
+          data: [100934, 234435, 523440, 30443, 323432, 282621, 292621],
+          borderColor: '#4b38b3',
+          fill: false,
+          tension: 0.3
+        },
+        {
+          label: 'Previous',
+          data: [20, 30, 25, 50, 30, 20, 25],
+          borderColor: '#2bc48a',
+          fill: false,
+          tension: 0.3
+        }
+      ]
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const cctx = document.getElementById('customerChart').getContext('2d');
+  new Chart(cctx, {
+    type: 'line',
+    data: {
+      labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+      datasets: [{
+        data: [100, 250, 270, 196, 135, 200, 249],
+        borderColor: '#fff',
+        backgroundColor: 'rgba(255,255,255,0.2)',
+        tension: 0.4,
+        fill: true
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: { y: { display: false }, x: { display: false } }
+    }
+  });
+</script>
+
+</body>
+</html>
